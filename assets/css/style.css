@@ -1,0 +1,229 @@
+body {
+	overflow-x: hidden;
+	color: #989dac;
+	font-family: tahoma;
+}
+/*css for navbar general*/
+div.container-fluid > div.collapse > ul.nav {
+	padding-top: 18px;
+}
+div.container-fluid > div.collapse > ul > li {
+	display: inline-grid;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-weight: 500;
+}
+div.container-fluid > div.collapse > ul > li > a > span {
+
+}
+div.navbar-header > a.navbar-brand > img.img-responsive {
+margin-right: 70px;
+margin-left: 38px;
+}
+div.collapse > ul.navbar-right > li > a.account_link {
+	color: #38c7da;
+    font-size: 18px;
+    padding-top: 18px;
+    margin-right: 0px;
+}
+nav.navbar-default .navbar-nav > li > a {
+	color: #989dac;
+	font-size: 16px;
+}
+div.collapse > ul.navbar-right {
+	border-left: 1px solid rgba(221, 221, 221, 0.49);
+}
+
+/*End of css for navbar general*/
+
+
+nav.secondNav  {
+	width: 100%;
+	background-color: #b34376;
+	color: #FFFFFF;
+}
+nav.secondNav > ul  {
+	font-size: 14px;
+	padding-left: 20px;
+}
+nav.secondNav > ul > li {
+	display: inline-block;
+	font-family: tahoma;
+	font-weight: 500;
+	letter-spacing: .5px;
+	padding-right: 20px;
+}
+nav.secondNav > ul > li:nth-child(1) {
+	padding-left: 35px;
+}
+nav.secondNav > ul > li:nth-child(2) {
+	padding-left: 20px;
+	border-right: 0.8px solid rgba(221, 221, 221, 0.49);
+	border-left: 0.8px solid rgba(221, 221, 221, 0.49);
+}
+nav.secondNav > ul > li:nth-child(3)  {
+	display: inline-block;
+	font-family: tahoma;
+	font-weight: 800;
+	border-left: 0.8px solid transparent;
+	border-right: 0.8px solid transparent;
+	letter-spacing: .5px;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+nav.secondNav > ul > li:nth-child(4)  {
+	width: 14%;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 7px;
+}
+nav.secondNav > ul > li:nth-child(4) > div.progress  {
+	border-radius: 0;
+	height: 30px;
+	margin-bottom: 0px;
+}
+nav.secondNav > ul > li:nth-child(4) > div.progress > .progress-bar-success {
+	background-color: rgba(92, 184, 92, 0.44);
+}
+nav.secondNav > ul > li:nth-child(4) > div.progress > div.progress-bar {
+	padding-top: 3px;
+}
+nav.secondNav > ul > li:nth-child(5)  {
+	width: 14%;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 7px;
+}
+nav.secondNav > ul > li:nth-child(5) > div.progress  {
+	border-radius: 0;
+	height: 30px;
+	margin-bottom: 0px;
+}
+nav.secondNav > ul > li:nth-child(5) > div.progress > .progress-bar-purple {
+	background-color: rgba(138, 48, 237, 0.37);
+}
+nav.secondNav > ul > li:nth-child(5) > div.progress > div.progress-bar {
+	padding-top: 3px;
+}
+nav.secondNav > ul > li:nth-child(6)  {
+	width: 14%;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 7px;
+}
+nav.secondNav > ul > li:nth-child(6) > div.progress  {
+	border-radius: 0;
+	height: 30px;
+	margin-bottom: 0px;
+}
+nav.secondNav > ul > li:nth-child(6) > div.progress > .progress-bar-lime {
+	background-color: rgba(37, 173, 117, 0.59);
+}
+nav.secondNav > ul > li:nth-child(6) > div.progress > div.progress-bar {
+	padding-top: 3px;
+}
+.carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+	margin: 0 auto;
+	display: inline;
+}
+
+
+/*css for DashBoard only*/
+div.container-fluid > div.row {
+	height: 500px;
+	background-image: url('');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 130%;
+}
+div.container-fluid > div.row > div.landing > div.col-md-8 {
+	
+}
+/*End of css for DashBoard*/
+
+/*css for login page only*/
+section.login > div.container-fluid > div.row > div.well {
+	padding: 0;
+}
+div.container-fluid > div.row > div.well-white {
+	background-color: #FFFFFF;
+}
+div.container-fluid > div.row > div.background {
+	height: 500px;
+	background-image: url('../img/login_image.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	margin-top: -20px;
+}
+div.login_area {
+    background-color: white;
+	  border-radius: 8px;
+	  background-color: #ffffff;
+	  box-shadow: 0 1px 2px 0 #dcdcdc;
+	  border: solid 0.5px #dcdcdc;
+	  margin-top: 75px;
+}
+div.row > div.col-md-6 >div.container > div.row > div.well-sm > h4 {
+    color: #3e6373;
+    font-size: 18px;
+    width: 230px; 
+}
+form > div.form-group > input.form-control {
+	width: 230px;
+	background-color: #ccc;
+	height: 52px;
+}
+form > div.checkbox > button {
+ background-color: #f26aa8;
+ color: white;
+}
+form > div.checkbox > button:hover {
+	background-color: #f26aa8;
+ color: #000;
+}
+div.checkbox > label {
+	 color: #3e6373;
+}
+div.row > div.col-md-6 > div > h5 > span:nth-child(1) {
+	color: aqua;
+	margin-right: 5px;
+}
+div > h5 > span:nth-child(2) {
+	margin-left: 5px;
+}
+div.login_area > div.container > div.row  .btn-block {
+    width: 330px;
+    height: 52px;
+}
+div.login_area > div.container > div.row  .btn-aqua {
+	background-color: #64ccf1;
+	color: white;
+}
+div.login_area > div.container > div.row  .btn-brown {
+	background-color: #df4930;
+	color: white;
+}
+div.social_login  button > span {
+    float: right;
+    padding-right: 47px;
+    padding-left: 28px;
+}
+div.social_login  button {
+	font-size: 14px;
+}
+div.social_login > div:nth-child(1) {
+	padding-top: 46px;
+	padding-bottom: 29px;
+	padding-left: 40px;
+}
+div.social_login > div:nth-child(2) {
+	padding-left: 40px;
+	padding-bottom: 25px;
+
+} 
+div.social_login > div:nth-child(3) {
+	padding-left: 40px;
+	padding-bottom: 64px;
+}
+/*End of css for login page only*/
