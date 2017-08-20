@@ -11,6 +11,10 @@
 |
 */
 
+
+
+########LOGIN AND REGISTER ROUTES #######
+Route::post('user/login/', 'Auth')
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/', 'HomeController@preview')->name('');
