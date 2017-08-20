@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Schema;
@@ -15,6 +16,9 @@ class CreateInterestsTable extends Migration
     {
         Schema::create('interests', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('source_id');
+            $table->integer('target_id');
+            $table->enum('status', ['0', '1'])->comment('0 - pending, 1 - accepted');
             $table->timestamps();
         });
     }
