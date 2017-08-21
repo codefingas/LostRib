@@ -14,9 +14,8 @@
 
 
 ########LOGIN AND REGISTER ROUTES #######
-Route::post('user/login/', 'Auth')
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('user/login/', 'Auth\LoginController@login');
 
-Route::get('/', 'HomeController@preview')->name('');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/profile', 'UserController@viewProfile')->name('view_profile');

@@ -16,9 +16,37 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
-        'name' => $faker->name,
+        'first_name' => $faker->name,
+        'last_name' => $faker->lastName,
         'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'password' => bcrypt('secret'),
         'remember_token' => str_random(10),
+        'date_of_birth' => $faker->dateTime,
+        'occupation' => $faker->jobTitle,
+        'gender' => $faker->randomElement(['m','f']),
+        'original_image' => $faker->url,
+        'blurred_image' => $faker->url,
+        'religion' => $faker->streetName,
+        'state_of_origin' => $faker->city,
+        'genotype' => $faker->randomLetter,
+        'height' => $faker->randomNumber(3),
+        'address' => $faker->streetAddress,
+        'city' => $faker->city,
+        'state' => $faker->country,
+        'phone_number' => $faker->phoneNumber,
+        'education_level' => $faker->randomLetter,
+        'educational_institution' => $faker->userName,
+        'personal_income' => $faker->randomDigit,
+        'social' => $faker->url,
+        'description' => $faker->url,
+        'embarrassing_traits' => $faker->realText(200),
+        'positive_traits' => $faker->realText(200),
+        'profile_for' => $faker->dayOfWeek,
+        'relationship_status' => $faker->word,
+        'find_out' => $faker->word
     ];
+});
+
+$factory->define(App\Interest::class, function (Faker\Generator $faker) {
+
 });
