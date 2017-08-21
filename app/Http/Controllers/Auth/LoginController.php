@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\HTTP\Request;
 
 class LoginController extends Controller
 {
@@ -32,15 +32,33 @@ class LoginController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
 
-    public function login(){
-        return 'the login route is working';
-        
+    public function login(Request $request)
+    {
+        if(Auth::check()){
+            return redirect(route('view_dashboard'));
+        }else{
+            $this->validate($request, [
+                'email' => 'bail|required|email',
+                'password' => 'bail|required'
+            ]);
+
+            if(Auth::attempt(['email' => $request->email, 'password' => $request->password ])){
+               return redirect('view_dashboard');
+            }
+        }
+
+        return ['code' => 403, 'message' => 'Invalid email and password combination'];
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return ['code' => 200, 'message' => 'Logout was successful'];
     }
 }
