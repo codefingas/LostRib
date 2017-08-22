@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'Controller@index')->name('home');
 
 
 /*ROUTES FOR LOGIN, REGISTER, HOME AND LOGOUT*/
@@ -28,16 +28,22 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/dashboard', 'HomeController@viewDashboard')->name('view_dashboard');
 
-Route::get('/profile', 'HomeController@viewProfile')->name('view_profile');
+Route::get('/original', 'HomeController@viewProfile')->name('view_profile');
 
 Route::get('/matches', 'HomeController@viewMatches')->name('viewMatches');
 
 
 Route::post('/processLogin', 'Auth\LoginController@login')->name('process_login');
 
-Route::get('/profile', 'UserController@viewProfile')->name('view_profile');
+Route::get('/original', 'UserController@viewProfile')->name('view_profile');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('photos', 'PhotosController');
+
+
+/*TEST ROUTES*/
+
 
 

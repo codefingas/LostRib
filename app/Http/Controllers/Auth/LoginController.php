@@ -40,25 +40,25 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        if(Auth::check()){
-            return redirect(route('view_dashboard'));
-        }else{
+        if ( Auth::check() ) {
+            return redirect($this->redirectTo);
+        } else {
             $this->validate($request, [
                 'email' => 'bail|required|email',
                 'password' => 'bail|required'
             ]);
 
-            if(Auth::attempt(['email' => $request->email, 'password' => $request->password ])){
-               return redirect('view_dashboard');
+            if ( Auth::attempt([ 'email' => $request->email, 'password' => $request->password ]) ) {
+                return redirect($this->redirectTo);
             }
         }
 
-        return ['code' => 403, 'message' => 'Invalid email and password combination'];
+        return null;
     }
 
     public function logout()
     {
         Auth::logout();
-        return ['code' => 200, 'message' => 'Logout was successful'];
+        return [ 'code' => 200, 'message' => 'Logout was successful' ];
     }
 }

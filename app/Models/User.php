@@ -27,16 +27,21 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function interests(){
-        $this->hasMany(Interest::class);
+    public function interestShownIn(){
+       return $this->hasMany(Interest::class, 'source_id');
+    }
+
+    public function interestShownFrom()
+    {
+        return $this->hasMany(Interest::class, 'target_id');
     }
 
     public function notifications(){
-        $this->hasMany(Notification::class);
+        return $this->hasMany(Notification::class);
     }
 
     public function transactions()
     {
-        $this->hasMany(Transaction::class);
+        return $this->hasMany(Transaction::class);
     }
 }
