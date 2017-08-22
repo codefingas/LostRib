@@ -9,4 +9,5 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 .env
-/resources/view/auth
+/resources/views/auth
+/reources/views/testViews
