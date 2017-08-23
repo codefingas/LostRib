@@ -38,6 +38,11 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function index()
+    {
+        return view('auth.login');
+    }
+
     public function login(Request $request)
     {
         if ( Auth::check() ) {
@@ -49,12 +54,13 @@ class LoginController extends Controller
             ]);
 
             if ( Auth::attempt([ 'email' => $request->email, 'password' => $request->password ]) ) {
-                return redirect($this->redirectTo);
+                return redirect(route('dashboard'));
             }
         }
 
         return null;
     }
+
 
     public function logout()
     {
