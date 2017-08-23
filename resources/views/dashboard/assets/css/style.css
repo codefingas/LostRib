@@ -579,3 +579,19 @@ h3.new_matches {
 div.latest {
     border-top: 1px solid #ddd;
 }
+input.mind_thoughts {
+    border-color: transparent;
+}
+input.mind_thoughts_submit {
+    visibility: hidden;
+}
+.a_link {
+    text-decoration: underline !important;
+}
+.users_mat_id {
+    margin-top: -10px;
+    color: #848484;
+}
+div.heading_activity {
+    padding-bottom: 34px;
+}
