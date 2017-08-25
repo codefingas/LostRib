@@ -9,12 +9,12 @@ class InterestsController extends Controller
 {
     public function index()
     {
-        return view('interests.index');
+        return 'interests.index';
     }
 
     public function view(Interest $interest)
     {
-        return view('interests.interest', compact($interest));
+        return $interest;
     }
     
     public function saveInterest(){

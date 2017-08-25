@@ -15,7 +15,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //TODO:: REMEMBER TO UNCOMMENT THIS LINE
+        //$this->middleware('auth');
     }
 
     /**
@@ -41,15 +42,18 @@ class HomeController extends Controller
 
         $matches = 'get matches';
 
-        return view(
-            'user.profile',
-
+        return
             [
                 'user' => $user,
                 'notifications' => $notifications,
                 'interests' => $interests,
                 'transactions' => $transactions,
                 'matches' => $matches
-            ]);
+            ];
+    }
+
+    public function viewDashboard()
+    {
+        return view('dashboard.dashboard');
     }
 }

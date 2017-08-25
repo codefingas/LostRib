@@ -40,8 +40,9 @@ class LoginController extends Controller
 
     public function index()
     {
-        return view('auth.login');
+        return view('login.login');
     }
+
 
     public function login(Request $request)
     {
@@ -54,7 +55,7 @@ class LoginController extends Controller
             ]);
 
             if ( Auth::attempt([ 'email' => $request->email, 'password' => $request->password ]) ) {
-                return redirect(route('dashboard'));
+                return redirect($this->redirectTo);
             }
         }
 
@@ -65,6 +66,6 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return [ 'code' => 200, 'message' => 'Logout was successful' ];
+        return redirect(route('login'));
     }
 }
