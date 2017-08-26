@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\SavedUserSearches;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -31,5 +32,11 @@ class SearchController extends Controller
         //process the search here based on the parameters passed in the search
         $searchResult = [];
         return 'searchResult';
+    }
+
+    public function saveUserSearch(Request $request)
+    {
+        $search = new SavedUserSearches();
+        $search->saveSearch($request);
     }
 }
