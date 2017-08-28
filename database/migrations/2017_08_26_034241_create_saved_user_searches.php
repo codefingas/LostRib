@@ -1,11 +1,10 @@
-
 <?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInterestsTable extends Migration
+class CreateSavedUserSearches extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +13,13 @@ class CreateInterestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('interests', function (Blueprint $table) {
+        Schema::create('saved_user_searches', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('source_id');
-            $table->integer('target_id');
-            $table->enum('status', ['0', '1'])->comment('0 - pending, 1 - accepted')->default('0');
             $table->timestamps();
+            $table->integer('user_id');
+            $table->json('search_parameters');
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateInterestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('interests');
+        Schema::dropIfExists('saved_user_searches');
     }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\HTTP\Request;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -38,27 +39,34 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function index()
+    {
+        return view('login.login');
+    }
+
+
     public function login(Request $request)
     {
-        if(Auth::check()){
-            return redirect(route('view_dashboard'));
-        }else{
+        if ( Auth::check() ) {
+            return redirect($this->redirectTo);
+        } else {
             $this->validate($request, [
                 'email' => 'bail|required|email',
                 'password' => 'bail|required'
             ]);
 
-            if(Auth::attempt(['email' => $request->email, 'password' => $request->password ])){
-               return redirect('view_dashboard');
+            if ( Auth::attempt([ 'email' => $request->email, 'password' => $request->password ]) ) {
+                return redirect($this->redirectTo);
             }
         }
 
-        return ['code' => 403, 'message' => 'Invalid email and password combination'];
+        return back()->withErrors(['login_failed' => 'incorrect email and password combination']);
     }
+
 
     public function logout()
     {
         Auth::logout();
-        return ['code' => 200, 'message' => 'Logout was successful'];
+        return redirect(route('login'));
     }
 }
