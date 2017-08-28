@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Interest;
 use App\User;
 use App\Notification;
 use Illuminate\Http\Request;
@@ -26,25 +27,29 @@ class HomeController extends Controller
      */
     public function index()
     {
-
+        return User::findOrFail(10);
     }
 
     public function viewProfile()
     {
-        $user = new User(Auth::id());
+        $user = Auth::user();
         
         $notifications = $user->notifications();
+
+        $interests = $user->load('interestShownIn')->load('interestShownFrom');
+        return $interests;
         $interests = [
-            'from' => $user->interestShownFrom(),
-            'to' => $user->interestShownIn()
+            'interest_from' => $user->interestShownFrom->where('status', '=', '0'),
+            'interested_in' => $user->interestShownIn->where('status', '=', '0')
         ];
+
+
         $transactions = $user->transactions();
 
         $matches = 'get matches';
 
-        return
-            [
-                'user' => $user,
+        return [
+                'user' => 'a',//$user,
                 'notifications' => $notifications,
                 'interests' => $interests,
                 'transactions' => $transactions,
@@ -54,6 +59,7 @@ class HomeController extends Controller
 
     public function viewDashboard()
     {
-        return view('dashboard.dashboard');
+        $user = Auth::user();
+        return view('dashboard.dashboard', compact('details'));
     }
 }

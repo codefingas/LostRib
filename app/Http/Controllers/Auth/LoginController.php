@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\HTTP\Request;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -59,7 +60,7 @@ class LoginController extends Controller
             }
         }
 
-        return null;
+        return back()->withErrors(['login_failed' => 'incorrect email and password combination']);
     }
 
 

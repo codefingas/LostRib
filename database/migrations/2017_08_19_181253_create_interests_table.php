@@ -18,7 +18,7 @@ class CreateInterestsTable extends Migration
             $table->increments('id');
             $table->integer('source_id');
             $table->integer('target_id');
-            $table->enum('status', ['0', '1'])->comment('0 - pending, 1 - accepted');
+            $table->enum('status', ['0', '1'])->comment('0 - pending, 1 - accepted')->default('0');
             $table->timestamps();
         });
     }

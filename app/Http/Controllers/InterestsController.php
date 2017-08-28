@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Interest;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InterestsController extends Controller
 {
     public function index()
     {
-        return 'interests.index';
+        return Auth::user()->interestShownIn;
     }
 
     public function view(Interest $interest)

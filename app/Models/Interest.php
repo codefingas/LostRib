@@ -7,8 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Interest extends Model
 {
-    //
-
+        
     public function initiatingUser()
     {
         return $this->belongsTo(User::class, 'source_id');

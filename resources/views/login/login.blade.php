@@ -60,6 +60,12 @@
 
                                                                     {{ csrf_field() }}
 
+                                                                    @if ($errors->all())
+                                                                        {{ var_dump($errors) }}
+                                                                    @else
+                                                                        the name of the man is a boy
+                                                                    @endif
+
                                                                     <div class="form-group">
                                                                         <input type="email"
                                                                                placeholder="Email"
